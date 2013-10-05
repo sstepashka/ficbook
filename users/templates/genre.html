@@ -1,0 +1,21 @@
+{% extends "paginator.html" %}
+
+{% load bootstrap_toolkit %}
+
+{% block content %}
+
+    <h1>{{genre.title}}</h1>
+
+    <table class="table">
+        {% for line in lines %}
+            <tr>
+                <td>{{ line }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% if paginator.num_pages > 1 %}
+        {{ lines|pagination }}
+    {% endif %}
+
+{% endblock %}

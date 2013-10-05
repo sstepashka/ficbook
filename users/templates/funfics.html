@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Categories</h1>
+    {% for category in categories %}
+        <p><a href="{% url category category.pk %}">{{ category.title }}</a></p>
+    {% empty %}
+        <p>Empty, I'm sorry :(</p>
+    {% endfor %}
+
+    <h1>Genres</h1>
+    {% for genre in genres %}
+        <p><a href="{% url genre genre.pk %}">{{ genre.title }}</a></p>
+    {% empty %}
+        <p>Empty, I'm sorry :(</p>
+    {% endfor %}
+
+{% endblock %}
